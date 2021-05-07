@@ -1,8 +1,9 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class PasswordValidator {
 
-
-
-    private String password;
+    protected List<String> errors = new ArrayList<String>();
 
     public PasswordValidator(){
     }
@@ -12,7 +13,15 @@ public class PasswordValidator {
             System.out.println("Passwor is valid !");
             return true;
         }else {
-            System.out.println("Passwor is not valid !");
+            System.out.println("Passwor is not valid ! please add :");
+            this.errors.add("Add more than 6 caracters ");
+
+            System.out.println("Size : "+errors.size());
+
+            for (int i = 0; i < errors.size(); i++) {
+                System.out.println(errors.get(i));
+            }
+
             return false;
         }
     }
@@ -22,6 +31,7 @@ public class PasswordValidator {
         {
             return true;
         }else {
+            this.errors.add("Add more than 6 caracters ");
             return false;
         }
     }
@@ -32,6 +42,7 @@ public class PasswordValidator {
         {
             return true;
         }else{
+            this.errors.add("Add at least one char");
             return false;
         }
 
@@ -71,17 +82,11 @@ public class PasswordValidator {
         {
             return false;
         }else{
+            this.errors.add("Add at least one number");
             return true;
         }
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
 
 }

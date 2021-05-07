@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -6,16 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PasswordValidatorTest {
 
     PasswordValidator pv = new PasswordValidator();
-    String testPass = "ThisIsATest88";
-
-
-
-
-    @Test
-    void testVerifyPassword(){
-
-        assertTrue(pv.verifyPassword(testPass));
-    }
+    String testPass = "ThisIsATest";
 
     @Test
     void testHasMoreThan6Car(){
@@ -48,6 +40,12 @@ class PasswordValidatorTest {
     void testHAsAtLeastOneNum(){
 
         assertTrue(pv.hasAtLeastOneNum(testPass));
+    }
+
+    @Test
+    void testVerifyPassword(){
+
+        assertTrue(pv.verifyPassword(testPass));
     }
 
 }

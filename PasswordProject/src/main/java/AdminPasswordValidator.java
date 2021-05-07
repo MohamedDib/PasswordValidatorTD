@@ -16,6 +16,7 @@ public class AdminPasswordValidator extends PasswordValidator {
         {
             return true;
         }else {
+            errors.add("Add at least 9 caracters");
             return false;
         }
     }
@@ -25,7 +26,9 @@ public class AdminPasswordValidator extends PasswordValidator {
         String specialChars = "(.*[@,#,$,%].*$)";
         if (!password.matches(specialChars ))
         {
+            errors.add("Add at least 9 caracters");
             return false;
+
         }else {
             return true;
         }
