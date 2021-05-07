@@ -7,12 +7,14 @@ public class PasswordValidator {
     public PasswordValidator(){
     }
 
-    public void verifyPassword(){
-        // more than 6 caracters
-
-        // at least one char
-
-        // at least one number
+    public boolean verifyPassword(String password){
+        if(hasMoreThan6Car(password) && hasAtLeastOneChar(password) && hasAtLeastOneNum(password)){
+            System.out.println("Passwor is valid !");
+            return true;
+        }else {
+            System.out.println("Passwor is not valid !");
+            return false;
+        }
     }
 
     public boolean hasMoreThan6Car(String password){
@@ -25,10 +27,34 @@ public class PasswordValidator {
     }
 
     public boolean hasAtLeastOneChar(String password){
+
+        if (hasAtLeastOneLowerChar(password) || hasAtLeastOneUpperChar(password))
+        {
+            return true;
+        }else{
+            return false;
+        }
+
+
+    }
+
+    public boolean hasAtLeastOneLowerChar(String password){
         String lowerCaseChars = "(.*[a-z].*)";
+
+        if (!password.matches(lowerCaseChars ))
+        {
+            return false;
+        }else{
+            return true;
+        }
+
+
+    }
+
+    public boolean hasAtLeastOneUpperChar(String password){
         String upperCaseChars = "(.*[A-Z].*)";
 
-        if (!password.matches(lowerCaseChars ) || !password.matches(upperCaseChars ))
+        if (!password.matches(upperCaseChars ))
         {
             System.out.println("Password must have atleast one lowercase character");
             return false;
@@ -38,12 +64,14 @@ public class PasswordValidator {
 
 
     }
+
     public boolean hasAtLeastOneNum(String password){
-        if (password.length()>=6)
+        String numbers = "(.*[0-9].*)";
+        if (!password.matches(numbers ))
         {
-            return true;
-        }else {
             return false;
+        }else{
+            return true;
         }
     }
 

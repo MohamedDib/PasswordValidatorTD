@@ -6,25 +6,48 @@ import static org.junit.jupiter.api.Assertions.*;
 class PasswordValidatorTest {
 
     PasswordValidator pv = new PasswordValidator();
+    String testPass = "ThisIsATest88";
+
+
+
+
+    @Test
+    void testVerifyPassword(){
+
+        assertTrue(pv.verifyPassword(testPass));
+    }
 
     @Test
     void testHasMoreThan6Car(){
 
-        String pass = "TestPassword";
 
-        assertTrue(pv.hasMoreThan6Car(pass));
+        assertTrue(pv.hasMoreThan6Car(testPass));
     }
 
     @Test
-    void testHasAtLeastOneChar(){
-        String pass = "TestPassword";
+    void testhasAtLeastOneUpperChar(){
 
-        assertTrue(pv.hasMoreThan6Car(pass));
+        assertTrue(pv.hasAtLeastOneUpperChar(testPass));
     }
+
+    @Test
+    void testhasAtLeastOneLowerChar(){
+
+        assertTrue(pv.hasAtLeastOneLowerChar(testPass));
+    }
+
+    @Test
+    void testhasAtLeastOneChar(){
+
+        assertTrue(pv.hasAtLeastOneChar(testPass));
+    }
+
+
 
     @Test
     void testHAsAtLeastOneNum(){
 
+        assertTrue(pv.hasAtLeastOneNum(testPass));
     }
 
 }
