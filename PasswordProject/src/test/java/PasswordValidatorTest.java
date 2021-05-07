@@ -6,7 +6,17 @@ class PasswordValidatorTest {
 
     @Test
     void testHasMoreThan6Car(){
-        
+
+    }
+
+    @Test
+    void testHasAtLeastOneChar(){
+
+    }
+
+    @Test
+    void testHAsAtLeastOneNum(){
+
     }
 
 }

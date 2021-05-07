@@ -22,31 +22,7 @@ public class PasswordValidator {
         // at least one number
     }
 
-    private boolean hasMoreThan6Car(String password){
-        if (password.length()>=6)
-        {
-            return true;
-        }else {
-            return false;
-        }
-    }
 
-    private boolean hasAtLeastOneChar(String password){
-        if (password.length()>=6)
-        {
-            return true;
-        }else {
-            return false;
-        }
-    }
-    private boolean hasAtLeastOneNum(String password){
-        if (password.length()>=6)
-        {
-            return true;
-        }else {
-            return false;
-        }
-    }
 
 
 }
